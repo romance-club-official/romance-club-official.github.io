@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romance Club | Watch Free Romantic Series & Videos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0b0b0c;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Header / Navbar */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background-color: #121214;
+            border-bottom: 2px solid #ff007f;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff007f;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px rgba(255, 0, 127, 0.5);
+        }
+
+        .logo span {
+            color: #ffffff;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: #b3b3b3;
+            text-decoration: none;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover, nav ul li a.active {
+            color: #ff007f;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Featured Hero Banner */
+        .hero {
+            background: linear-gradient(rgba(11, 11, 12, 0.4), #0b0b0c), url('https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=1200&auto=format&fit=crop') no-repeat center center/cover;
+            height: 400px;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 40px;
+            margin-bottom: 40px;
+            border: 1px solid #222;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            color: #ff007f;
+            margin-bottom: 10px;
+            text-shadow: 0 0 15px rgba(255, 0, 127, 0.4);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #cccccc;
+            max-width: 600px;
+            margin-bottom: 20px;
+        }
+
+        .btn-watch {
+            background-color: #ff007f;
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            width: fit-content;
+            transition: 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-watch:hover {
+            background-color: #d00068;
+            box-shadow: 0 0 15px rgba(255, 0, 127, 0.6);
+        }
+
+        /* Section Title */
+        .section-title {
+            font-size: 22px;
+            margin-bottom: 20px;
+            border-left: 4px solid #ff007f;
+            padding-left: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Video Grid Layout */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .video-card {
+            background-color: #121214;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #222;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+            border-color: #ff007f;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            background-color: #000;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .video-info {
+            padding: 15px;
+        }
+
+        .video-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #ffffff;
+            line-height: 1.4;
+        }
+
+        .video-meta {
+            font-size: 13px;
+            color: #8c8c8c;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #121214;
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 14px;
+            border-top: 1px solid #222;
+            margin-top: 40px;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px;
+            }
+            nav ul li {
+                margin: 0 10px;
+            }
+            .hero h1 {
+                font-size: 30px;
+            }
+            .hero p {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation Bar -->
+    <header>
+        <div class="logo">Romance <span>Club</span></div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Trending</a></li>
+                <li><a href="#">Web Series</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        
+        <!-- Main Featured Banner -->
+        <div class="hero">
+            <h1>Exclusive Romantic Stream</h1>
+            <p>Explore the best romantic clips, music videos, and emotional series. Updated daily with premium content.</p>
+            <a href="#stream-section" class="btn-watch">Watch Now</a>
+        </div>
+
+        <!-- Video Stream Section -->
+        <div id="stream-section">
+            <h2 class="section-title">Trending Videos & Series</h2>
+            
+            <div class="video-grid">
+                
+                <!-- Video 1 -->
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <!-- YouTube Video ID: 12q7R_wv-MQ -->
+                        <iframe src="https://www.youtube.com/embed/12q7R_wv-MQ" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <div class="video-title">Rasiya Full Video - Kurbaan | Saif Ali Khan & Kareena Kapoor</div>
+                        <div class="video-meta">
+                            <span>🔥 Top Romantic</span>
+                            <span>Premium Quality</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 2 -->
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <!-- YouTube Video ID: KLXNS4y_0iU -->
+                        <iframe src="https://www.youtube.com/embed/KLXNS4y_0iU" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <div class="video-title">Tera Hojane De | Official Romantic Song - Season 2</div>
+                        <div class="video-meta">
+                            <span>❤️ Web Series Special</span>
+                            <span>Trending #1</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 3 (Duplicate Placeholder as requested) -->
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/12q7R_wv-MQ" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <div class="video-title">Rasiya Premium Cut - Romantic Moments</div>
+                        <div class="video-meta">
+                            <span>✨ Recommended</span>
+                            <span>Full HD</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 4 (Duplicate Placeholder as requested) -->
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/KLXNS4y_0iU" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <div class="video-title">Tera Hojane De - Acoustic Version</div>
+                        <div class="video-meta">
+                            <span>🎵 Music Stream</span>
+                            <span>Popular</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Website Footer -->
+    <footer>
+        &copy; 2026 Romance Club. All rights reserved. For entertainment purposes only.
+    </footer>
+
+</body>
+</html>
