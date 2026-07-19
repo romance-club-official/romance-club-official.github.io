@@ -9,7 +9,6 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
         body { background-color: #060608; color: #ffffff; overflow-x: hidden; scroll-behavior: smooth; }
         
-        /* Top Navigation Bar */
         header { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; background-color: rgba(6, 6, 8, 0.95); position: sticky; top: 0; z-index: 100; backdrop-filter: blur(10px); }
         .logo-container { display: flex; align-items: center; gap: 10px; }
         .logo-container img { height: 50px; width: auto; animation: pulseLogo 3s infinite ease-in-out; }
@@ -26,7 +25,6 @@
 
         .container { max-width: 1400px; margin: 0 auto; padding: 20px; }
         
-        /* Main Premium Slider Hero Area */
         .hero-slider { position: relative; width: 100%; height: 500px; border-radius: 24px; overflow: hidden; margin-bottom: 40px; border: 1px solid rgba(255,255,255,0.05); }
         .hero-slide { width: 100%; height: 100%; background: linear-gradient(to right, #060608 25%, rgba(6,6,8,0.4) 60%, transparent), linear-gradient(to top, #060608 10%, transparent), url('https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=1600&auto=format&fit=crop') no-repeat center center/cover; display: flex; flex-direction: column; justify-content: center; padding: 60px; }
         .tag-exclusive { background: rgba(255, 0, 127, 0.2); color: #ff007f; padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: bold; text-transform: uppercase; width: fit-content; margin-bottom: 15px; border: 1px solid rgba(255,0,127,0.4); }
@@ -38,35 +36,32 @@
         .btn-sub { background: rgba(255,255,255,0.08); color: white; padding: 12px 28px; border-radius: 8px; font-weight: bold; text-decoration: none; border: 1px solid rgba(255,255,255,0.1); transition: 0.3s; }
         .btn-sub:hover { background: rgba(255,255,255,0.15); }
 
-        /* Feature Row Infographics */
         .features-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 50px; }
         .feature-box { background: #111115; padding: 20px; border-radius: 12px; display: flex; align-items: center; gap: 15px; border: 1px solid rgba(255,255,255,0.02); }
         .feature-icon { width: 40px; height: 40px; background: rgba(255,0,127,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #ff007f; font-weight: bold; }
         .feature-text h4 { font-size: 14px; font-weight: 600; }
         .feature-text p { font-size: 12px; color: #777; margin-top: 2px; }
 
-        /* Rows Titles */
         .row-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
         .row-title { font-size: 20px; font-weight: 700; border-left: 4px solid #ff007f; padding-left: 10px; }
         .view-all { color: #ff007f; text-decoration: none; font-size: 14px; font-weight: 600; }
 
-        /* Premium Video Cards Grid */
         .video-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; margin-bottom: 50px; }
-        .video-card { background: #0c0c10; border-radius: 12px; overflow: hidden; transition: all 0.3s ease; border: 1px solid rgba(255,255,255,0.03); }
-        .video-card:hover { transform: translateY(-5px); border-color: rgba(255, 0, 127, 0.4); }
+        .video-card { background: #0c0c10; border-radius: 12px; overflow: hidden; transition: all 0.3s ease; border: 1px solid rgba(255,255,255,0.03); opacity: 0; transform: translateY(15px); }
+        .video-card.show { opacity: 1; transform: translateY(0); }
+        .video-card:hover { transform: translateY(-5px); border-color: rgba(255, 0, 127, 0.4); box-shadow: 0 10px 20px rgba(255, 0, 127, 0.15); }
         
         .video-thumb { position: relative; padding-bottom: 56.25%; background-size: cover; background-position: center; border-radius: 12px; overflow: hidden; }
         .play-btn-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; opacity: 0; transition: 0.3s; }
         .video-card:hover .play-btn-overlay { opacity: 1; }
         .play-icon-circle { background: #ff007f; width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 15px #ff007f; }
         
-        .card-tag { position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.6); padding: 3px 8px; border-radius: 4px; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+        .card-tag { position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.6); padding: 3px 8px; border-radius: 4px; font-size: 10px; font-weight: 600; text-transform: uppercase; }
 
         .video-info { padding: 12px 5px; }
         .video-title { font-size: 14px; font-weight: 600; margin-bottom: 5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         .video-meta { font-size: 12px; color: #666; font-weight: 500; }
 
-        /* Floating Request Form */
         .form-section { background: #111115; border: 1px solid rgba(255, 0, 127, 0.2); border-radius: 16px; padding: 30px; max-width: 500px; margin: 40px auto; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
         .form-section h3 { font-size: 20px; color: #ff007f; margin-bottom: 20px; text-align: center; text-transform: uppercase; }
         .form-group { margin-bottom: 15px; }
@@ -89,7 +84,6 @@
 </head>
 <body>
 
-    <!-- Header Navigation matching UI -->
     <header>
         <div class="logo-container">
             <img src="romance-club.png" alt="Logo">
@@ -107,7 +101,6 @@
 
     <div class="container">
         
-        <!-- Premium UI Hero Section Slider Background -->
         <div class="hero-slider">
             <div class="hero-slide">
                 <span class="tag-exclusive">Exclusive</span>
@@ -120,7 +113,6 @@
             </div>
         </div>
 
-        <!-- Dashboard Feature Infographic Badges -->
         <div class="features-row">
             <div class="feature-box">
                 <div class="feature-icon">💎</div>
@@ -140,7 +132,7 @@
             </div>
         </div>
 
-        <!-- Dynamic Content Rows -->
+        <!-- Row 1: Trending Now -->
         <div id="trending-section">
             <div class="row-header">
                 <div class="row-title">Trending Now</div>
@@ -149,6 +141,7 @@
             <div class="video-grid" id="trending-grid"></div>
         </div>
 
+        <!-- Row 2: Continue Watching -->
         <div id="continue-section">
             <div class="row-header">
                 <div class="row-title">Continue Watching</div>
@@ -157,7 +150,6 @@
             <div class="video-grid" id="continue-grid"></div>
         </div>
 
-        <!-- Book Girl Request Box Area -->
         <div id="book-girl-section" class="form-section">
             <h3>Book Girl VIP Request</h3>
             <form id="vipForm">
@@ -181,7 +173,6 @@
     <footer>&copy; 2026 Romance Club. All rights reserved.</footer>
 
     <script>
-        // Firebase Setup Configuration Block
         const firebaseConfig = {
             apiKey: "YOUR_API_KEY",
             authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
@@ -202,35 +193,76 @@
                 message: document.getElementById('message').value,
                 timestamp: new Date().toISOString()
             }).then(() => {
-                alert('Request Submited Successfully!');
+                alert('Request Submitted Successfully!');
                 document.getElementById('vipForm').reset();
             });
         });
 
-        // Cleaned verified Unique YouTube Video Lists matching design parameters
+        // Aapki 43 Unique Videos ko rows me distribute kar diya hai perfectly
         const trendingVideos = [
-            { id: "za0gUCf9DJo", title: "After We Fell", tag: "Series" },
-            { id: "Yscz2G5gUAg", title: "Endless Love", tag: "Movie" },
-            { id: "_SKK-gaxcEQ", title: "Love in Paris", tag: "Series" },
-            { id: "gvoahmE2pSE", title: "Heartbeat Moment", tag: "Clip" },
-            { id: "ojNN_hxUvao", title: "The Vow Special Cut", tag: "Movie" }
+            { id: "ojNN_hxUvao", title: "Romance Club Video 01", tag: "Trending" },
+            { id: "nK9EPzALN9k", title: "Exclusive Clip 02", tag: "Hot" },
+            { id: "9MPMHdik-CM", title: "Special Romantic Cut 03", tag: "Popular" },
+            { id: "IghMx36xj6E", title: "Romance Club Video 04", tag: "Series" },
+            { id: "m68YRePOUQ0", title: "Exclusive Clip 05", tag: "Trending" },
+            { id: "0DlN4jaSO18", title: "Special Romantic Cut 06", tag: "New" },
+            { id: "mto_TgxexbU", title: "Romance Club Video 07", tag: "Hot" },
+            { id: "XUZCvZ4U6CY", title: "Exclusive Clip 08", tag: "Series" },
+            { id: "7Hn5sQwQ1PE", title: "Special Romantic Cut 09", tag: "New" },
+            { id: "keDYhnr3SeM", title: "Romance Club Video 10", tag: "Trending" },
+            { id: "WjnKNn1KkRA", title: "Exclusive Clip 11", tag: "VIP" },
+            { id: "0bAVd9jJE2Q", title: "Special Romantic Cut 12", tag: "Popular" },
+            { id: "YLtOK8MnAyw", title: "Romance Club Video 13", tag: "Series" },
+            { id: "SZvJd2fADHM", title: "Exclusive Clip 14", tag: "New" },
+            { id: "W3OS6LhAsLU", title: "Special Romantic Cut 15", tag: "Hot" },
+            { id: "dRWNHj5uPQg", title: "Romance Club Video 16", tag: "VIP" },
+            { id: "t8xfDlbPalk", title: "Exclusive Clip 17", tag: "Popular" },
+            { id: "XtshHoOI7bA", title: "Special Romantic Cut 18", tag: "Trending" },
+            { id: "3XgIeQCLhwE", title: "Romance Club Video 19", tag: "New" },
+            { id: "zXd1P9z-ttI", title: "Exclusive Clip 20", tag: "Series" },
+            { id: "SW6fhmiR5zc", title: "Special Romantic Cut 21", tag: "Hot" },
+            { id: "z7titOuvJVw", title: "Romance Club Video 22", tag: "VIP" }
         ];
 
         const continueVideos = [
-            { id: "nK9EPzALN9k", title: "Midnight Hearts", tag: "Episode 4" },
-            { id: "keDYhnr3SeM", title: "Falling for You", tag: "Episode 6" },
-            { id: "9MPMHdik-CM", title: "Love Confessions", tag: "Episode 2" },
-            { id: "IghMx36xj6E", title: "Exclusive Romance Edit", tag: "VIP" }
+            { id: "mCX7ERTkfMo", title: "Exclusive Clip 23", tag: "Clip" },
+            { id: "UT7xBIiNgW0", title: "Special Romantic Cut 24", tag: "Series" },
+            { id: "xycd6Kgk27c", title: "Romance Club Video 25", tag: "Movie" },
+            { id: "8uf4_HFyWPI", title: "Exclusive Clip 26", tag: "Hot" },
+            { id: "Z8905bTluNk", title: "Special Romantic Cut 27", tag: "Trending" },
+            { id: "VIVyjFQpA40", title: "Romance Club Video 28", tag: "New" },
+            { id: "F0BmPnvxO3c", title: "Exclusive Clip 29", tag: "Popular" },
+            { id: "D102K9iEPfk", title: "Special Romantic Cut 30", tag: "Series" },
+            { id: "fRvw9edcduY", title: "Romance Club Video 31", tag: "Movie" },
+            { id: "qByV3avwd5I", title: "Exclusive Clip 32", tag: "VIP" },
+            { id: "wd8VY2FsqMg", title: "Special Romantic Cut 33", tag: "Hot" },
+            { id: "oZ8Q3qBICtc", title: "Romance Club Video 34", tag: "Trending" },
+            { id: "0ua5VozgqqY", title: "Exclusive Clip 35", tag: "New" },
+            { id: "8rAhQZDkHCs", title: "Special Romantic Cut 36", tag: "Popular" },
+            { id: "tNNaCxpp-K8", title: "Romance Club Video 37", tag: "Series" },
+            { id: "JJV4cUh1hz0", title: "Exclusive Clip 38", tag: "VIP" },
+            { id: "uAfux74vq2w", title: "Special Romantic Cut 39", tag: "Movie" },
+            { id: "HH4qVQfSNuA", title: "Romance Club Video 40", tag: "Hot" },
+            { id: "E65dmqceA1o", title: "Exclusive Clip 41", tag: "Trending" },
+            { id: "ZM3PKv7lnUw", title: "Special Romantic Cut 42", tag: "New" },
+            { id: "hTR-0O2HMXU", title: "Romance Club Video 43", tag: "VIP" }
         ];
 
         function renderRow(videoArray, elementId) {
             const container = document.getElementById(elementId);
-            videoArray.forEach(video => {
+            videoArray.forEach((video, index) => {
                 const card = document.createElement("div");
                 card.className = "video-card";
+                
+                // Solid 3-tier fallback URL system for thumbnail error validation
+                const thumbUrl = `https://img.youtube.com/vi/${video.id}/hqdefault.jpg`;
+                const mqUrl = `https://img.youtube.com/vi/${video.id}/mqdefault.jpg`;
+                const backupUrl = `https://img.youtube.com/vi/${video.id}/0.jpg`;
+                const idRef = `${elementId}-${index}`;
+
                 card.innerHTML = `
                     <a href="https://www.youtube.com/watch?v=${video.id}" target="_blank" style="text-decoration: none; color: inherit;">
-                        <div class="video-thumb" style="background-image: url('https://img.youtube.com/vi/${video.id}/hqdefault.jpg');">
+                        <div class="video-thumb" id="${idRef}" style="background-image: url('${thumbUrl}');">
                             <span class="card-tag">${video.tag}</span>
                             <div class="play-btn-overlay">
                                 <div class="play-icon-circle">
@@ -245,11 +277,36 @@
                     </div>
                 `;
                 container.appendChild(card);
+
+                // Safe image checks to eliminate gray placeholders
+                const img = new Image();
+                img.src = thumbUrl;
+                img.onload = function() {
+                    if(this.width === 120) { 
+                        // Tier 2 Fallback
+                        const img2 = new Image();
+                        img2.src = mqUrl;
+                        img2.onload = function() {
+                            document.getElementById(idRef).style.backgroundImage = (this.width === 120) ? `url('${backupUrl}')` : `url('${mqUrl}')`;
+                        };
+                    }
+                }
             });
         }
 
         renderRow(trendingVideos, "trending-grid");
         renderRow(continueVideos, "continue-grid");
+
+        // Entrance animation handler
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) entry.target.classList.add('show');
+            });
+        }, { threshold: 0.05 });
+
+        setTimeout(() => {
+            document.querySelectorAll('.video-card').forEach(card => observer.observe(card));
+        }, 100);
     </script>
 </body>
 </html>
