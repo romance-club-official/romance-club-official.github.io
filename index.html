@@ -25,16 +25,17 @@
 
         .container { max-width: 1400px; margin: 0 auto; padding: 20px; }
         
+        /* Fixed Hero Slider with Perfect Center Alignment */
         .hero-slider { position: relative; width: 100%; height: 500px; border-radius: 24px; overflow: hidden; margin-bottom: 40px; border: 1px solid rgba(255,255,255,0.05); }
-        .hero-slide { width: 100%; height: 100%; background: linear-gradient(to right, #060608 25%, rgba(6,6,8,0.4) 60%, transparent), linear-gradient(to top, #060608 10%, transparent), url('https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=1600&auto=format&fit=crop') no-repeat center center/cover; display: flex; flex-direction: column; justify-content: center; padding: 60px; }
-        .tag-exclusive { background: rgba(255, 0, 127, 0.2); color: #ff007f; padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: bold; text-transform: uppercase; width: fit-content; margin-bottom: 15px; border: 1px solid rgba(255,0,127,0.4); }
-        .hero-slide h1 { font-size: 56px; font-weight: 800; margin-bottom: 15px; line-height: 1.1; }
-        .hero-slide p { font-size: 16px; color: #aaa; max-width: 450px; margin-bottom: 30px; line-height: 1.5; }
-        .hero-btns { display: flex; gap: 15px; }
-        .btn-main { background: #ff007f; color: white; padding: 12px 28px; border-radius: 8px; font-weight: bold; text-decoration: none; transition: 0.3s; }
-        .btn-main:hover { background: #d00068; }
-        .btn-sub { background: rgba(255,255,255,0.08); color: white; padding: 12px 28px; border-radius: 8px; font-weight: bold; text-decoration: none; border: 1px solid rgba(255,255,255,0.1); transition: 0.3s; }
-        .btn-sub:hover { background: rgba(255,255,255,0.15); }
+        .hero-slide { width: 100%; height: 100%; background: linear-gradient(to top, rgba(6, 6, 8, 0.85) 0%, rgba(6, 6, 8, 0.4) 50%, rgba(6, 6, 8, 0.85) 100%), url('https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=1600&auto=format&fit=crop') no-repeat center center/cover; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 40px; }
+        .tag-exclusive { background: rgba(255, 0, 127, 0.2); color: #ff007f; padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: bold; text-transform: uppercase; width: fit-content; margin-bottom: 20px; border: 1px solid rgba(255,0,127,0.4); letter-spacing: 1px; }
+        .hero-slide h1 { font-size: 56px; font-weight: 800; margin-bottom: 15px; line-height: 1.2; text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8); }
+        .hero-slide p { font-size: 17px; color: #d0d0d5; max-width: 650px; margin-bottom: 35px; line-height: 1.6; text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9); }
+        .hero-btns { display: flex; gap: 20px; justify-content: center; align-items: center; }
+        .btn-main { background: #ff007f; color: white; padding: 14px 32px; border-radius: 8px; font-weight: bold; text-decoration: none; transition: 0.3s; box-shadow: 0 4px 15px rgba(255, 0, 127, 0.3); }
+        .btn-main:hover { background: #d00068; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255, 0, 127, 0.5); }
+        .btn-sub { background: rgba(26, 26, 36, 0.8); color: white; padding: 14px 32px; border-radius: 8px; font-weight: bold; text-decoration: none; border: 1px solid rgba(255,255,255,0.1); transition: 0.3s; backdrop-filter: blur(5px); }
+        .btn-sub:hover { background: rgba(255, 255, 255, 0.15); transform: translateY(-2px); }
 
         .features-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 50px; }
         .feature-box { background: #111115; padding: 20px; border-radius: 12px; display: flex; align-items: center; gap: 15px; border: 1px solid rgba(255,255,255,0.02); }
@@ -78,6 +79,16 @@
             50% { transform: scale(1.05); filter: drop-shadow(0 0 12px rgba(255, 0, 127, 0.6)); }
             100% { transform: scale(1); filter: drop-shadow(0 0 5px rgba(255, 0, 127, 0.3)); }
         }
+        
+        @media (max-width: 768px) { 
+            header { flex-direction: column; gap: 15px; } 
+            nav ul li { margin: 0 10px; } 
+            .hero-slide h1 { font-size: 38px; }
+            .hero-slide p { font-size: 15px; }
+            .hero-btns { flex-direction: column; width: 100%; gap: 12px; }
+            .btn-main, .btn-sub { width: 100%; text-align: center; }
+            .features-row { grid-template-columns: repeat(2, 1fr); }
+        }
     </style>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
@@ -101,10 +112,11 @@
 
     <div class="container">
         
+        <!-- Center-Aligned Perfect Hero Section -->
         <div class="hero-slider">
             <div class="hero-slide">
                 <span class="tag-exclusive">Exclusive</span>
-                <h1>Romantic<br><span style="color:#ff007f;">Stream</span></h1>
+                <h1>Romantic Stream</h1>
                 <p>Explore the best romantic clips, music videos, and emotional series. Updated daily with premium content.</p>
                 <div class="hero-btns">
                     <a href="#trending-section" class="btn-main">▶ Start Watching</a>
@@ -132,7 +144,6 @@
             </div>
         </div>
 
-        <!-- Row 1: Trending Now -->
         <div id="trending-section">
             <div class="row-header">
                 <div class="row-title">Trending Now</div>
@@ -141,7 +152,6 @@
             <div class="video-grid" id="trending-grid"></div>
         </div>
 
-        <!-- Row 2: Continue Watching -->
         <div id="continue-section">
             <div class="row-header">
                 <div class="row-title">Continue Watching</div>
@@ -173,7 +183,6 @@
     <footer>&copy; 2026 Romance Club. All rights reserved.</footer>
 
     <script>
-        // Paste your unique keys here from Firebase Console setup
         const firebaseConfig = {
             apiKey: "YOUR_API_KEY",
             authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
@@ -199,7 +208,6 @@
             });
         });
 
-        // 43 Pure Real YouTube Video Filter (Rows Segmented)
         const trendingVideos = [
             { id: "ojNN_hxUvao", title: "Romance Club Video 01", tag: "Trending" },
             { id: "nK9EPzALN9k", title: "Exclusive Clip 02", tag: "Hot" },
@@ -245,7 +253,7 @@
             { id: "uAfux74vq2w", title: "Special Romantic Cut 39", tag: "Movie" },
             { id: "HH4qVQfSNuA", title: "Romance Club Video 40", tag: "Hot" },
             { id: "E65dmqceA1o", title: "Exclusive Clip 41", tag: "Trending" },
-            { id: "za0gUCf9DJo", title: "Special Romantic Cut 42", tag: "New" }, // Replaced faulty link with correct alternate format
+            { id: "za0gUCf9DJo", title: "Special Romantic Cut 42", tag: "New" },
             { id: "Yscz2G5gUAg", title: "Romance Club Video 43", tag: "VIP" }
         ];
 
