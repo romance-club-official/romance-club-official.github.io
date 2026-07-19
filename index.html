@@ -25,18 +25,15 @@
 
         .container { max-width: 1400px; margin: 0 auto; padding: 20px; }
         
-        /* Fixed Hero Slider with Perfect Center Alignment */
-        .hero-slider { position: relative; width: 100%; height: 500px; border-radius: 24px; overflow: hidden; margin-bottom: 40px; border: 1px solid rgba(255,255,255,0.05); }
-        .hero-slide { width: 100%; height: 100%; background: linear-gradient(to top, rgba(6, 6, 8, 0.85) 0%, rgba(6, 6, 8, 0.4) 50%, rgba(6, 6, 8, 0.85) 100%), url('https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=1600&auto=format&fit=crop') no-repeat center center/cover; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 40px; }
-        .tag-exclusive { background: rgba(255, 0, 127, 0.2); color: #ff007f; padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: bold; text-transform: uppercase; width: fit-content; margin-bottom: 20px; border: 1px solid rgba(255,0,127,0.4); letter-spacing: 1px; }
-        .hero-slide h1 { font-size: 56px; font-weight: 800; margin-bottom: 15px; line-height: 1.2; text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8); }
-        .hero-slide p { font-size: 17px; color: #d0d0d5; max-width: 650px; margin-bottom: 35px; line-height: 1.6; text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9); }
-        .hero-btns { display: flex; gap: 20px; justify-content: center; align-items: center; }
-        .btn-main { background: #ff007f; color: white; padding: 14px 32px; border-radius: 8px; font-weight: bold; text-decoration: none; transition: 0.3s; box-shadow: 0 4px 15px rgba(255, 0, 127, 0.3); }
-        .btn-main:hover { background: #d00068; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255, 0, 127, 0.5); }
-        .btn-sub { background: rgba(26, 26, 36, 0.8); color: white; padding: 14px 32px; border-radius: 8px; font-weight: bold; text-decoration: none; border: 1px solid rgba(255,255,255,0.1); transition: 0.3s; backdrop-filter: blur(5px); }
-        .btn-sub:hover { background: rgba(255, 255, 255, 0.15); transform: translateY(-2px); }
-
+        .hero-slider { position: relative; width: 100%; height: 520px; border-radius: 24px; overflow: hidden; margin-bottom: 40px; border: 1px solid rgba(255,255,255,0.05); }
+        .hero-slide { width: 100%; height: 100%; background: linear-gradient(to top, rgba(6, 6, 8, 0.95) 0%, rgba(6, 6, 8, 0.6) 50%, rgba(6, 6, 8, 0.95) 100%), url('https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=1600&auto=format&fit=crop') no-repeat center center/cover; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 40px; }
+        .tag-exclusive { background: rgba(255, 0, 127, 0.25); color: #ff007f; padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: bold; text-transform: uppercase; width: fit-content; margin-bottom: 20px; border: 1px solid rgba(255,0,127,0.5); letter-spacing: 1px; }
+        .hero-slide h1 { font-size: 64px; font-weight: 800; margin-bottom: 18px; line-height: 1.2; text-shadow: 0 4px 25px rgba(0, 0, 0, 1), 0 0 40px rgba(0,0,0,0.8); }
+        .hero-slide p { font-size: 20px; color: #ffffff; max-width: 750px; margin-bottom: 35px; line-height: 1.6; text-shadow: 0 3px 15px rgba(0, 0, 0, 1), 0 0 25px rgba(0,0,0,0.9); font-weight: 500; }
+        .hero-btns { display: flex; justify-content: center; align-items: center; }
+        .btn-main { background: #ff007f; color: white; padding: 16px 40px; border-radius: 8px; font-size: 18px; font-weight: bold; text-decoration: none; transition: 0.3s; box-shadow: 0 4px 15px rgba(255, 0, 127, 0.4); }
+        .btn-main:hover { background: #d00068; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255, 0, 127, 0.6); }
+        
         .features-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 50px; }
         .feature-box { background: #111115; padding: 20px; border-radius: 12px; display: flex; align-items: center; gap: 15px; border: 1px solid rgba(255,255,255,0.02); }
         .feature-icon { width: 40px; height: 40px; background: rgba(255,0,127,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #ff007f; font-weight: bold; }
@@ -48,7 +45,7 @@
         .view-all { color: #ff007f; text-decoration: none; font-size: 14px; font-weight: 600; }
 
         .video-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; margin-bottom: 50px; }
-        .video-card { background: #0c0c10; border-radius: 12px; overflow: hidden; transition: all 0.3s ease; border: 1px solid rgba(255,255,255,0.03); opacity: 0; transform: translateY(15px); }
+        .video-card { background: #0c0c10; border-radius: 12px; overflow: hidden; transition: all 0.3s ease; border: 1px solid rgba(255,255,255,0.03); opacity: 0; transform: translateY(15px); cursor: pointer; }
         .video-card.show { opacity: 1; transform: translateY(0); }
         .video-card:hover { transform: translateY(-5px); border-color: rgba(255, 0, 127, 0.4); box-shadow: 0 10px 20px rgba(255, 0, 127, 0.15); }
         
@@ -63,8 +60,16 @@
         .video-title { font-size: 14px; font-weight: 600; margin-bottom: 5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         .video-meta { font-size: 12px; color: #666; font-weight: 500; }
 
+        .video-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.95); z-index: 1000; align-items: center; justify-content: center; backdrop-filter: blur(8px); }
+        .modal-content { position: relative; width: 90%; max-width: 850px; background: #0c0c10; border-radius: 16px; border: 1px solid rgba(255, 0, 127, 0.3); overflow: hidden; box-shadow: 0 0 30px rgba(255, 0, 127, 0.3); }
+        .modal-video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; }
+        .modal-video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        .modal-close { position: absolute; top: 15px; right: 20px; color: white; font-size: 30px; font-weight: bold; cursor: pointer; z-index: 1010; transition: 0.3s; }
+        .modal-close:hover { color: #ff007f; }
+
+        /* Premium Form Section Configured */
         .form-section { background: #111115; border: 1px solid rgba(255, 0, 127, 0.2); border-radius: 16px; padding: 30px; max-width: 500px; margin: 40px auto; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
-        .form-section h3 { font-size: 20px; color: #ff007f; margin-bottom: 20px; text-align: center; text-transform: uppercase; }
+        .form-section h3 { font-size: 22px; color: #ff007f; margin-bottom: 20px; text-align: center; text-transform: uppercase; letter-spacing: 0.5px; }
         .form-group { margin-bottom: 15px; }
         .form-group label { display: block; color: #888; margin-bottom: 6px; font-size: 13px; }
         .form-group input, .form-group textarea { width: 100%; padding: 12px; background: #060608; border: 1px solid #222; border-radius: 8px; color: white; font-size: 14px; transition: 0.3s; }
@@ -83,10 +88,8 @@
         @media (max-width: 768px) { 
             header { flex-direction: column; gap: 15px; } 
             nav ul li { margin: 0 10px; } 
-            .hero-slide h1 { font-size: 38px; }
-            .hero-slide p { font-size: 15px; }
-            .hero-btns { flex-direction: column; width: 100%; gap: 12px; }
-            .btn-main, .btn-sub { width: 100%; text-align: center; }
+            .hero-slide h1 { font-size: 42px; }
+            .hero-slide p { font-size: 16px; }
             .features-row { grid-template-columns: repeat(2, 1fr); }
         }
     </style>
@@ -104,10 +107,10 @@
             <ul>
                 <li><a href="#" class="active">Home</a></li>
                 <li><a href="#trending-section">Trending</a></li>
-                <li><a href="#book-girl-section">Book Girl</a></li>
+                <li><a href="#premium-section">Premium Service</a></li>
             </ul>
         </nav>
-        <a href="#book-girl-section" class="premium-btn">👑 Go Premium</a>
+        <a href="#premium-section" class="premium-btn">👑 Go Premium</a>
     </header>
 
     <div class="container">
@@ -119,7 +122,6 @@
                 <p>Explore the best romantic clips, music videos, and emotional series. Updated daily with premium content.</p>
                 <div class="hero-btns">
                     <a href="#trending-section" class="btn-main">▶ Start Watching</a>
-                    <a href="#book-girl-section" class="btn-sub">Explore VIP</a>
                 </div>
             </div>
         </div>
@@ -161,8 +163,9 @@
             <div class="video-grid" id="continue-grid"></div>
         </div>
 
-        <div id="book-girl-section" class="form-section">
-            <h3>Book Girl VIP Request</h3>
+        <!-- Corrected Form Section -->
+        <div id="premium-section" class="form-section">
+            <h3>👑 Premium Service</h3>
             <form id="vipForm">
                 <div class="form-group">
                     <label>Your Name / Username</label>
@@ -178,6 +181,16 @@
                 </div>
                 <button type="submit" class="btn-submit">Submit Request</button>
             </form>
+        </div>
+    </div>
+
+    <!-- Video Modal Player overlay -->
+    <div id="videoModal" class="video-modal">
+        <span class="modal-close" onclick="closePlayer()">&times;</span>
+        <div class="modal-content">
+            <div class="modal-video-wrapper">
+                <iframe id="modalIframe" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
         </div>
     </div>
 
@@ -209,7 +222,25 @@
             });
         });
 
-        // Unique filtered array with no repeats - Divided into 2 segmented rows
+        function playVideoDirect(videoId) {
+            const modal = document.getElementById("videoModal");
+            const iframe = document.getElementById("modalIframe");
+            iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+            modal.style.display = "flex";
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === "Escape") closePlayer();
+        });
+
+        function closePlayer() {
+            const modal = document.getElementById("videoModal");
+            const iframe = document.getElementById("modalIframe");
+            iframe.src = "";
+            modal.style.display = "none";
+        }
+
+        // Unique filtered 81 items
         const trendingVideos = [
             { id: "za0gUCf9DJo", title: "Romance Club Video 01", tag: "Trending" },
             { id: "vlvftpXicAA", title: "Exclusive Clip 02", tag: "Hot" },
@@ -241,45 +272,45 @@
             { id: "rk2GOFMMM9I", title: "Romance Club Video 28", tag: "VIP" },
             { id: "keDYhnr3SeM", title: "Exclusive Clip 29", tag: "New" },
             { id: "CHY8e5A-yLw", title: "Special Romantic Cut 30", tag: "Popular" },
-            { id: "m68YRePOUQ0", title: "Romance Club Video 31", tag: "Series" }
+            { id: "m68YRePOUQ0", title: "Romance Club Video 31", tag: "Series" },
+            { id: "kFM1HkK0o5w", title: "Exclusive Clip 32", tag: "VIP" },
+            { id: "SW6fhmiR5zc", title: "Special Romantic Cut 33", tag: "Popular" },
+            { id: "ZmBbiX9DXSc", title: "Romance Club Video 34", tag: "Hot" },
+            { id: "ZRe-q0vGChE", title: "Exclusive Clip 35", tag: "Trending" },
+            { id: "3pJzBTrrETM", title: "Special Romantic Cut 36", tag: "New" },
+            { id: "z0fjMMfBZ1g", title: "Romance Club Video 37", tag: "VIP" },
+            { id: "1Qb4Hghn-Q4", title: "Exclusive Clip 38", tag: "Series" },
+            { id: "zcu9Bo5WiR0", title: "Special Romantic Cut 39", tag: "Popular" },
+            { id: "cjNyUuBNEVk", title: "Romance Club Video 40", tag: "Hot" }
         ];
 
         const continueVideos = [
-            { id: "kFM1HkK0o5w", title: "Exclusive Clip 32", tag: "Clip" },
-            { id: "SW6fhmiR5zc", title: "Special Romantic Cut 33", tag: "Series" },
-            { id: "ZmBbiX9DXSc", title: "Romance Club Video 34", tag: "Movie" },
-            { id: "ZRe-q0vGChE", title: "Exclusive Clip 35", tag: "Hot" },
-            { id: "3pJzBTrrETM", title: "Special Romantic Cut 36", tag: "Trending" },
-            { id: "z0fjMMfBZ1g", title: "Romance Club Video 37", tag: "New" },
-            { id: "1Qb4Hghn-Q4", title: "Exclusive Clip 38", tag: "Popular" },
-            { id: "zcu9Bo5WiR0", title: "Special Romantic Cut 39", tag: "Series" },
-            { id: "cjNyUuBNEVk", title: "Romance Club Video 40", tag: "Movie" },
-            { id: "SZvJd2fADHM", title: "Exclusive Clip 41", tag: "VIP" },
-            { id: "C_4xHZExvVg", title: "Special Romantic Cut 42", tag: "Hot" },
-            { id: "sbbKwp_A1sI", title: "Romance Club Video 43", tag: "Trending" },
-            { id: "ZWIRAPMnTmI", title: "Exclusive Clip 44", tag: "New" },
-            { id: "gtBoUosvGhk", title: "Special Romantic Cut 45", tag: "Popular" },
-            { id: "e35autN4-jY", title: "Romance Club Video 46", tag: "Series" },
+            { id: "SZvJd2fADHM", title: "Exclusive Clip 41", tag: "Clip" },
+            { id: "C_4xHZExvVg", title: "Special Romantic Cut 42", tag: "Series" },
+            { id: "sbbKwp_A1sI", title: "Romance Club Video 43", tag: "Movie" },
+            { id: "ZWIRAPMnTmI", title: "Exclusive Clip 44", tag: "Hot" },
+            { id: "gtBoUosvGhk", title: "Special Romantic Cut 45", tag: "Trending" },
+            { id: "e35autN4-jY", title: "Romance Club Video 46", tag: "New" },
             { id: "CRzEXhwWPh0", title: "Exclusive Clip 47", tag: "VIP" },
-            { id: "nDsyIVo3Un4", title: "Special Romantic Cut 48", tag: "Movie" },
-            { id: "hVP5FI1-bKI", title: "Romance Club Video 49", tag: "Hot" },
-            { id: "Yscz2G5gUAg", title: "Exclusive Clip 50", tag: "Trending" },
-            { id: "kfxU7Y8E04k", title: "Special Romantic Cut 51", tag: "New" },
-            { id: "bHAflX5yGJk", title: "Romance Club Video 52", tag: "Popular" },
-            { id: "21EZZbvsd34", title: "Exclusive Clip 53", tag: "VIP" },
-            { id: "c5VebeBy5a4", title: "Special Romantic Cut 54", tag: "Movie" },
-            { id: "ouQSsgDN7ik", title: "Romance Club Video 55", tag: "Hot" },
-            { id: "nmbMNYnOjXo", title: "Exclusive Clip 56", tag: "Trending" },
-            { id: "xZwboYuWWJs", title: "Special Romantic Cut 57", tag: "New" },
-            { id: "-MxC4YSLlKE", title: "Romance Club Video 58", tag: "Popular" },
-            { id: "I45mal0bgNw", title: "Exclusive Clip 59", tag: "Series" },
-            { id: "4WGyVUnTiiI", title: "Special Romantic Cut 60", tag: "VIP" },
-            { id: "-tl_sjuv3bI", title: "Romance Club Video 61", tag: "New" },
-            { id: "eaAqcSlTGYw", title: "Exclusive Clip 62", tag: "Hot" },
-            { id: "fAbhkhTCYqM", title: "Special Romantic Cut 63", tag: "Trending" },
-            { id: "Kqtu1-bze2M", title: "Romance Club Video 64", tag: "New" },
-            { id: "KCV-9ybHQbs", title: "Exclusive Clip 65", tag: "Popular" },
-            { id: "QRmPCOGR4Ug", title: "Special Romantic Cut 66", tag: "Series" },
+            { id: "nDsyIVo3Un4", title: "Special Romantic Cut 48", tag: "Series" },
+            { id: "hVP5FI1-bKI", title: "Romance Club Video 49", tag: "Movie" },
+            { id: "Yscz2G5gUAg", title: "Exclusive Clip 50", tag: "VIP" },
+            { id: "kfxU7Y8E04k", title: "Special Romantic Cut 51", tag: "Hot" },
+            { id: "bHAflX5yGJk", title: "Romance Club Video 52", tag: "Trending" },
+            { id: "21EZZbvsd34", title: "Exclusive Clip 53", tag: "New" },
+            { id: "c5VebeBy5a4", title: "Special Romantic Cut 54", tag: "Popular" },
+            { id: "ouQSsgDN7ik", title: "Romance Club Video 55", tag: "Series" },
+            { id: "nmbMNYnOjXo", title: "Exclusive Clip 56", tag: "VIP" },
+            { id: "xZwboYuWWJs", title: "Special Romantic Cut 57", tag: "Movie" },
+            { id: "-MxC4YSLlKE", title: "Romance Club Video 58", tag: "Hot" },
+            { id: "I45mal0bgNw", title: "Exclusive Clip 59", tag: "Trending" },
+            { id: "4WGyVUnTiiI", title: "Special Romantic Cut 60", tag: "New" },
+            { id: "-tl_sjuv3bI", title: "Romance Club Video 61", tag: "Popular" },
+            { id: "eaAqcSlTGYw", title: "Exclusive Clip 62", tag: "Series" },
+            { id: "fAbhkhTCYqM", title: "Special Romantic Cut 63", tag: "VIP" },
+            { id: "Kqtu1-bze2M", title: "Romance Club Video 64", tag: "Movie" },
+            { id: "KCV-9ybHQbs", title: "Exclusive Clip 65", tag: "Hot" },
+            { id: "QRmPCOGR4Ug", title: "Special Romantic Cut 66", tag: "Trending" },
             { id: "lWnAGwVB7u4", title: "Romance Club Video 67", tag: "Movie" },
             { id: "rjlpeyI-HNo", title: "Exclusive Clip 68", tag: "VIP" },
             { id: "Hhjk0DvJfWA", title: "Special Romantic Cut 69", tag: "Hot" },
@@ -293,59 +324,31 @@
             { id: "IoClV8Kd8PM", title: "Exclusive Clip 77", tag: "Trending" },
             { id: "zXd1P9z-ttI", title: "Special Romantic Cut 78", tag: "New" },
             { id: "eV_V_n9Mq90", title: "Romance Club Video 79", tag: "VIP" },
-            { id: "pSBWJkRg3O8", title: "Exclusive Clip 80", tag: "Popular" },
-            { id: "7LOBctJVlUw", title: "Special Romantic Cut 81", tag: "Series" },
-            { id: "--jLQY-Tc6U", title: "Romance Club Video 82", tag: "Movie" },
-            { id: "8sgs60kWZQo", title: "Exclusive Clip 83", tag: "Hot" },
-            { id: "xlT0U71ud3A", title: "Special Romantic Cut 84", tag: "Trending" },
-            { id: "淡淡cVv9f5FVK3k", title: "Romance Club Video 85", tag: "New" }, // Auto sanitizes faulty strings
-            { id: "giCy2ivVixw", title: "Exclusive Clip 86", tag: "Popular" },
-            { id: "PGXfS_XAITc", title: "Special Romantic Cut 87", tag: "VIP" },
-            { id: "r5GFGa6OZrk", title: "Romance Club Video 88", tag: "Movie" },
-            { id: "sg19zWarOwM", title: "Exclusive Clip 89", tag: "Hot" },
-            { id: "w-BXz1MoMdM", title: "Special Romantic Cut 90", tag: "Trending" },
-            { id: "fhPrtvJgIa0", title: "Romance Club Video 91", tag: "New" },
-            { id: "X9IIsdTkaX4", title: "Exclusive Clip 92", tag: "Popular" },
-            { id: "XSw5_tlsiq8", title: "Special Romantic Cut 93", tag: "Series" },
-            { id: "9iOL5Ko0Uug", title: "Romance Club Video 94", tag: "VIP" },
-            { id: "ZKJSg9RIqHA", title: "Exclusive Clip 95", tag: "Movie" },
-            { id: "4aV0KZJecuE", title: "Special Romantic Cut 96", tag: "Hot" },
-            { id: "WiG_pnJA6EQ", title: "Romance Club Video 97", tag: "Trending" },
-            { id: "Y6vsHA-iamc", title: "Exclusive Clip 98", tag: "New" },
-            { id: "c_feHE9Hed0", title: "Special Romantic Cut 99", tag: "Popular" },
-            { id: "R2JsQxPt0JU", title: "Romance Club Video 100", tag: "Series" },
-            { id: "2Ny5q-XHXqI", title: "Exclusive Clip 101", tag: "VIP" },
-            { id: "i5PMF-z3Saw", title: "Special Romantic Cut 102", tag: "Movie" },
-            { id: "JEjAOE3G6O8", title: "Romance Club Video 103", tag: "Hot" },
-            { id: "iujR96RmYDE", title: "Exclusive Clip 104", tag: "Trending" },
-            { id: "gvoahmE2pSE", title: "Special Romantic Cut 105", tag: "New" },
-            { id: "9XjALxZx6D4", title: "Romance Club Video 106", tag: "VIP" }
+            { id: "pSBWJkRg3O8", title: "Exclusive Clip 80", tag: "Trending" },
+            { id: "gvoahmE2pSE", title: "Special Romantic Cut 81", tag: "New" }
         ];
 
         function renderRow(videoArray, elementId) {
             const container = document.getElementById(elementId);
             videoArray.forEach((video, index) => {
-                // Sanitizes any stray characters attached to video.id string from scrapers
-                const cleanId = video.id.replace(/[^a-zA-Z0-9_-]/g, "");
                 const card = document.createElement("div");
                 card.className = "video-card";
+                card.onclick = () => playVideoDirect(video.id);
                 
-                const thumbUrl = `https://img.youtube.com/vi/${cleanId}/hqdefault.jpg`;
-                const mqUrl = `https://img.youtube.com/vi/${cleanId}/mqdefault.jpg`;
-                const backupUrl = `https://img.youtube.com/vi/${cleanId}/0.jpg`;
+                const thumbUrl = `https://img.youtube.com/vi/${video.id}/hqdefault.jpg`;
+                const mqUrl = `https://img.youtube.com/vi/${video.id}/mqdefault.jpg`;
+                const backupUrl = `https://img.youtube.com/vi/${video.id}/0.jpg`;
                 const idRef = `${elementId}-${index}`;
 
                 card.innerHTML = `
-                    <a href="https://www.youtube.com/watch?v=${cleanId}" target="_blank" style="text-decoration: none; color: inherit;">
-                        <div class="video-thumb" id="${idRef}" style="background-image: url('${thumbUrl}');">
-                            <span class="card-tag">${video.tag}</span>
-                            <div class="play-btn-overlay">
-                                <div class="play-icon-circle">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
-                                </div>
+                    <div class="video-thumb" id="${idRef}" style="background-image: url('${thumbUrl}');">
+                        <span class="card-tag">${video.tag}</span>
+                        <div class="play-btn-overlay">
+                            <div class="play-icon-circle">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
                             </div>
                         </div>
-                    </a>
+                    </div>
                     <div class="video-info">
                         <div class="video-title">${video.title}</div>
                         <div class="video-meta">Romance, Drama</div>
