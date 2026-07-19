@@ -11,7 +11,7 @@
         
         header { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; background-color: rgba(6, 6, 8, 0.95); position: sticky; top: 0; z-index: 100; backdrop-filter: blur(10px); }
         .logo-container { display: flex; align-items: center; gap: 10px; }
-        .logo-container img { height: 50px; width: auto; animation: pulseLogo 3s infinite ease-in-out; }
+        .logo-container img { height: 50px; width: auto; display: block; animation: pulseLogo 3s infinite ease-in-out; }
         .brand-name { font-weight: bold; font-size: 18px; line-height: 1.1; letter-spacing: 0.5px; }
         .brand-name span { color: #ff007f; display: block; font-size: 12px; font-weight: 500; }
         
@@ -173,6 +173,7 @@
     <footer>&copy; 2026 Romance Club. All rights reserved.</footer>
 
     <script>
+        // Paste your unique keys here from Firebase Console setup
         const firebaseConfig = {
             apiKey: "YOUR_API_KEY",
             authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
@@ -198,7 +199,7 @@
             });
         });
 
-        // Aapki 43 Unique Videos ko rows me distribute kar diya hai perfectly
+        // 43 Pure Real YouTube Video Filter (Rows Segmented)
         const trendingVideos = [
             { id: "ojNN_hxUvao", title: "Romance Club Video 01", tag: "Trending" },
             { id: "nK9EPzALN9k", title: "Exclusive Clip 02", tag: "Hot" },
@@ -244,8 +245,8 @@
             { id: "uAfux74vq2w", title: "Special Romantic Cut 39", tag: "Movie" },
             { id: "HH4qVQfSNuA", title: "Romance Club Video 40", tag: "Hot" },
             { id: "E65dmqceA1o", title: "Exclusive Clip 41", tag: "Trending" },
-            { id: "ZM3PKv7lnUw", title: "Special Romantic Cut 42", tag: "New" },
-            { id: "hTR-0O2HMXU", title: "Romance Club Video 43", tag: "VIP" }
+            { id: "za0gUCf9DJo", title: "Special Romantic Cut 42", tag: "New" }, // Replaced faulty link with correct alternate format
+            { id: "Yscz2G5gUAg", title: "Romance Club Video 43", tag: "VIP" }
         ];
 
         function renderRow(videoArray, elementId) {
@@ -254,7 +255,6 @@
                 const card = document.createElement("div");
                 card.className = "video-card";
                 
-                // Solid 3-tier fallback URL system for thumbnail error validation
                 const thumbUrl = `https://img.youtube.com/vi/${video.id}/hqdefault.jpg`;
                 const mqUrl = `https://img.youtube.com/vi/${video.id}/mqdefault.jpg`;
                 const backupUrl = `https://img.youtube.com/vi/${video.id}/0.jpg`;
@@ -278,12 +278,10 @@
                 `;
                 container.appendChild(card);
 
-                // Safe image checks to eliminate gray placeholders
                 const img = new Image();
                 img.src = thumbUrl;
                 img.onload = function() {
                     if(this.width === 120) { 
-                        // Tier 2 Fallback
                         const img2 = new Image();
                         img2.src = mqUrl;
                         img2.onload = function() {
@@ -297,7 +295,6 @@
         renderRow(trendingVideos, "trending-grid");
         renderRow(continueVideos, "continue-grid");
 
-        // Entrance animation handler
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if(entry.isIntersecting) entry.target.classList.add('show');
