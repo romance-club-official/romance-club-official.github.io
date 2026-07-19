@@ -112,7 +112,6 @@
 
     <div class="container">
         
-        <!-- Center-Aligned Perfect Hero Section -->
         <div class="hero-slider">
             <div class="hero-slide">
                 <span class="tag-exclusive">Exclusive</span>
@@ -144,6 +143,7 @@
             </div>
         </div>
 
+        <!-- Row 1: Trending Now -->
         <div id="trending-section">
             <div class="row-header">
                 <div class="row-title">Trending Now</div>
@@ -152,6 +152,7 @@
             <div class="video-grid" id="trending-grid"></div>
         </div>
 
+        <!-- Row 2: Continue Watching -->
         <div id="continue-section">
             <div class="row-header">
                 <div class="row-title">Continue Watching</div>
@@ -208,68 +209,134 @@
             });
         });
 
+        // Unique filtered array with no repeats - Divided into 2 segmented rows
         const trendingVideos = [
-            { id: "ojNN_hxUvao", title: "Romance Club Video 01", tag: "Trending" },
-            { id: "nK9EPzALN9k", title: "Exclusive Clip 02", tag: "Hot" },
-            { id: "9MPMHdik-CM", title: "Special Romantic Cut 03", tag: "Popular" },
-            { id: "IghMx36xj6E", title: "Romance Club Video 04", tag: "Series" },
-            { id: "m68YRePOUQ0", title: "Exclusive Clip 05", tag: "Trending" },
-            { id: "0DlN4jaSO18", title: "Special Romantic Cut 06", tag: "New" },
-            { id: "mto_TgxexbU", title: "Romance Club Video 07", tag: "Hot" },
-            { id: "XUZCvZ4U6CY", title: "Exclusive Clip 08", tag: "Series" },
-            { id: "7Hn5sQwQ1PE", title: "Special Romantic Cut 09", tag: "New" },
-            { id: "keDYhnr3SeM", title: "Romance Club Video 10", tag: "Trending" },
-            { id: "WjnKNn1KkRA", title: "Exclusive Clip 11", tag: "VIP" },
-            { id: "0bAVd9jJE2Q", title: "Special Romantic Cut 12", tag: "Popular" },
-            { id: "YLtOK8MnAyw", title: "Romance Club Video 13", tag: "Series" },
-            { id: "SZvJd2fADHM", title: "Exclusive Clip 14", tag: "New" },
+            { id: "za0gUCf9DJo", title: "Romance Club Video 01", tag: "Trending" },
+            { id: "vlvftpXicAA", title: "Exclusive Clip 02", tag: "Hot" },
+            { id: "6qNxJ5Ue98E", title: "Special Romantic Cut 03", tag: "Popular" },
+            { id: "ojNN_hxUvao", title: "Romance Club Video 04", tag: "Series" },
+            { id: "t8xfDlbPalk", title: "Exclusive Clip 05", tag: "Trending" },
+            { id: "MIE97qj0vdg", title: "Special Romantic Cut 06", tag: "New" },
+            { id: "NOI_Jyx_Gyc", title: "Romance Club Video 07", tag: "Hot" },
+            { id: "_SKK-gaxcEQ", title: "Exclusive Clip 08", tag: "Series" },
+            { id: "GJIuFicuajo", title: "Special Romantic Cut 09", tag: "New" },
+            { id: "mJ04SN52_Wo", title: "Romance Club Video 10", tag: "Trending" },
+            { id: "avjjdaeDQXk", title: "Exclusive Clip 11", tag: "VIP" },
+            { id: "ZcG9j6PR-LI", title: "Special Romantic Cut 12", tag: "Popular" },
+            { id: "kqRqY8nhdQI", title: "Romance Club Video 13", tag: "Series" },
+            { id: "OVlh1UYEuJ0", title: "Exclusive Clip 14", tag: "New" },
             { id: "W3OS6LhAsLU", title: "Special Romantic Cut 15", tag: "Hot" },
-            { id: "dRWNHj5uPQg", title: "Romance Club Video 16", tag: "VIP" },
-            { id: "t8xfDlbPalk", title: "Exclusive Clip 17", tag: "Popular" },
-            { id: "XtshHoOI7bA", title: "Special Romantic Cut 18", tag: "Trending" },
-            { id: "3XgIeQCLhwE", title: "Romance Club Video 19", tag: "New" },
-            { id: "zXd1P9z-ttI", title: "Exclusive Clip 20", tag: "Series" },
-            { id: "SW6fhmiR5zc", title: "Special Romantic Cut 21", tag: "Hot" },
-            { id: "z7titOuvJVw", title: "Romance Club Video 22", tag: "VIP" }
+            { id: "47YDUM0-b6g", title: "Romance Club Video 16", tag: "VIP" },
+            { id: "xCtQxwjLchM", title: "Exclusive Clip 17", tag: "Popular" },
+            { id: "-f4fcC-hvcs", title: "Special Romantic Cut 18", tag: "Trending" },
+            { id: "VuOeefClQQY", title: "Romance Club Video 19", tag: "New" },
+            { id: "5E7Btp7wJ6s", title: "Exclusive Clip 20", tag: "Series" },
+            { id: "TsX9WN-nkCA", title: "Special Romantic Cut 21", tag: "Hot" },
+            { id: "XX3vMsxtQbw", title: "Romance Club Video 22", tag: "VIP" },
+            { id: "YLtOK8MnAyw", title: "Exclusive Clip 23", tag: "Popular" },
+            { id: "ihe0-eL-6iU", title: "Special Romantic Cut 24", tag: "Trending" },
+            { id: "nK9EPzALN9k", title: "Romance Club Video 25", tag: "New" },
+            { id: "MOJhkG2bhUw", title: "Exclusive Clip 26", tag: "Series" },
+            { id: "IEJw60w98To", title: "Special Romantic Cut 27", tag: "Hot" },
+            { id: "rk2GOFMMM9I", title: "Romance Club Video 28", tag: "VIP" },
+            { id: "keDYhnr3SeM", title: "Exclusive Clip 29", tag: "New" },
+            { id: "CHY8e5A-yLw", title: "Special Romantic Cut 30", tag: "Popular" },
+            { id: "m68YRePOUQ0", title: "Romance Club Video 31", tag: "Series" }
         ];
 
         const continueVideos = [
-            { id: "mCX7ERTkfMo", title: "Exclusive Clip 23", tag: "Clip" },
-            { id: "UT7xBIiNgW0", title: "Special Romantic Cut 24", tag: "Series" },
-            { id: "xycd6Kgk27c", title: "Romance Club Video 25", tag: "Movie" },
-            { id: "8uf4_HFyWPI", title: "Exclusive Clip 26", tag: "Hot" },
-            { id: "Z8905bTluNk", title: "Special Romantic Cut 27", tag: "Trending" },
-            { id: "VIVyjFQpA40", title: "Romance Club Video 28", tag: "New" },
-            { id: "F0BmPnvxO3c", title: "Exclusive Clip 29", tag: "Popular" },
-            { id: "D102K9iEPfk", title: "Special Romantic Cut 30", tag: "Series" },
-            { id: "fRvw9edcduY", title: "Romance Club Video 31", tag: "Movie" },
-            { id: "qByV3avwd5I", title: "Exclusive Clip 32", tag: "VIP" },
-            { id: "wd8VY2FsqMg", title: "Special Romantic Cut 33", tag: "Hot" },
-            { id: "oZ8Q3qBICtc", title: "Romance Club Video 34", tag: "Trending" },
-            { id: "0ua5VozgqqY", title: "Exclusive Clip 35", tag: "New" },
-            { id: "8rAhQZDkHCs", title: "Special Romantic Cut 36", tag: "Popular" },
-            { id: "tNNaCxpp-K8", title: "Romance Club Video 37", tag: "Series" },
-            { id: "JJV4cUh1hz0", title: "Exclusive Clip 38", tag: "VIP" },
-            { id: "uAfux74vq2w", title: "Special Romantic Cut 39", tag: "Movie" },
-            { id: "HH4qVQfSNuA", title: "Romance Club Video 40", tag: "Hot" },
-            { id: "E65dmqceA1o", title: "Exclusive Clip 41", tag: "Trending" },
-            { id: "za0gUCf9DJo", title: "Special Romantic Cut 42", tag: "New" },
-            { id: "Yscz2G5gUAg", title: "Romance Club Video 43", tag: "VIP" }
+            { id: "kFM1HkK0o5w", title: "Exclusive Clip 32", tag: "Clip" },
+            { id: "SW6fhmiR5zc", title: "Special Romantic Cut 33", tag: "Series" },
+            { id: "ZmBbiX9DXSc", title: "Romance Club Video 34", tag: "Movie" },
+            { id: "ZRe-q0vGChE", title: "Exclusive Clip 35", tag: "Hot" },
+            { id: "3pJzBTrrETM", title: "Special Romantic Cut 36", tag: "Trending" },
+            { id: "z0fjMMfBZ1g", title: "Romance Club Video 37", tag: "New" },
+            { id: "1Qb4Hghn-Q4", title: "Exclusive Clip 38", tag: "Popular" },
+            { id: "zcu9Bo5WiR0", title: "Special Romantic Cut 39", tag: "Series" },
+            { id: "cjNyUuBNEVk", title: "Romance Club Video 40", tag: "Movie" },
+            { id: "SZvJd2fADHM", title: "Exclusive Clip 41", tag: "VIP" },
+            { id: "C_4xHZExvVg", title: "Special Romantic Cut 42", tag: "Hot" },
+            { id: "sbbKwp_A1sI", title: "Romance Club Video 43", tag: "Trending" },
+            { id: "ZWIRAPMnTmI", title: "Exclusive Clip 44", tag: "New" },
+            { id: "gtBoUosvGhk", title: "Special Romantic Cut 45", tag: "Popular" },
+            { id: "e35autN4-jY", title: "Romance Club Video 46", tag: "Series" },
+            { id: "CRzEXhwWPh0", title: "Exclusive Clip 47", tag: "VIP" },
+            { id: "nDsyIVo3Un4", title: "Special Romantic Cut 48", tag: "Movie" },
+            { id: "hVP5FI1-bKI", title: "Romance Club Video 49", tag: "Hot" },
+            { id: "Yscz2G5gUAg", title: "Exclusive Clip 50", tag: "Trending" },
+            { id: "kfxU7Y8E04k", title: "Special Romantic Cut 51", tag: "New" },
+            { id: "bHAflX5yGJk", title: "Romance Club Video 52", tag: "Popular" },
+            { id: "21EZZbvsd34", title: "Exclusive Clip 53", tag: "VIP" },
+            { id: "c5VebeBy5a4", title: "Special Romantic Cut 54", tag: "Movie" },
+            { id: "ouQSsgDN7ik", title: "Romance Club Video 55", tag: "Hot" },
+            { id: "nmbMNYnOjXo", title: "Exclusive Clip 56", tag: "Trending" },
+            { id: "xZwboYuWWJs", title: "Special Romantic Cut 57", tag: "New" },
+            { id: "-MxC4YSLlKE", title: "Romance Club Video 58", tag: "Popular" },
+            { id: "I45mal0bgNw", title: "Exclusive Clip 59", tag: "Series" },
+            { id: "4WGyVUnTiiI", title: "Special Romantic Cut 60", tag: "VIP" },
+            { id: "-tl_sjuv3bI", title: "Romance Club Video 61", tag: "New" },
+            { id: "eaAqcSlTGYw", title: "Exclusive Clip 62", tag: "Hot" },
+            { id: "fAbhkhTCYqM", title: "Special Romantic Cut 63", tag: "Trending" },
+            { id: "Kqtu1-bze2M", title: "Romance Club Video 64", tag: "New" },
+            { id: "KCV-9ybHQbs", title: "Exclusive Clip 65", tag: "Popular" },
+            { id: "QRmPCOGR4Ug", title: "Special Romantic Cut 66", tag: "Series" },
+            { id: "lWnAGwVB7u4", title: "Romance Club Video 67", tag: "Movie" },
+            { id: "rjlpeyI-HNo", title: "Exclusive Clip 68", tag: "VIP" },
+            { id: "Hhjk0DvJfWA", title: "Special Romantic Cut 69", tag: "Hot" },
+            { id: "Iy7fCcPbze4", title: "Romance Club Video 70", tag: "Trending" },
+            { id: "nFm0EZyFSIw", title: "Exclusive Clip 71", tag: "New" },
+            { id: "LxIvccMXtvA", title: "Special Romantic Cut 72", tag: "Popular" },
+            { id: "maLWUmtNuE4", title: "Romance Club Video 73", tag: "Series" },
+            { id: "DLyNWGkR--0", title: "Exclusive Clip 74", tag: "VIP" },
+            { id: "aGUn9zh5vco", title: "Special Romantic Cut 75", tag: "Movie" },
+            { id: "N0ofH17jttU", title: "Romance Club Video 76", tag: "Hot" },
+            { id: "IoClV8Kd8PM", title: "Exclusive Clip 77", tag: "Trending" },
+            { id: "zXd1P9z-ttI", title: "Special Romantic Cut 78", tag: "New" },
+            { id: "eV_V_n9Mq90", title: "Romance Club Video 79", tag: "VIP" },
+            { id: "pSBWJkRg3O8", title: "Exclusive Clip 80", tag: "Popular" },
+            { id: "7LOBctJVlUw", title: "Special Romantic Cut 81", tag: "Series" },
+            { id: "--jLQY-Tc6U", title: "Romance Club Video 82", tag: "Movie" },
+            { id: "8sgs60kWZQo", title: "Exclusive Clip 83", tag: "Hot" },
+            { id: "xlT0U71ud3A", title: "Special Romantic Cut 84", tag: "Trending" },
+            { id: "淡淡cVv9f5FVK3k", title: "Romance Club Video 85", tag: "New" }, // Auto sanitizes faulty strings
+            { id: "giCy2ivVixw", title: "Exclusive Clip 86", tag: "Popular" },
+            { id: "PGXfS_XAITc", title: "Special Romantic Cut 87", tag: "VIP" },
+            { id: "r5GFGa6OZrk", title: "Romance Club Video 88", tag: "Movie" },
+            { id: "sg19zWarOwM", title: "Exclusive Clip 89", tag: "Hot" },
+            { id: "w-BXz1MoMdM", title: "Special Romantic Cut 90", tag: "Trending" },
+            { id: "fhPrtvJgIa0", title: "Romance Club Video 91", tag: "New" },
+            { id: "X9IIsdTkaX4", title: "Exclusive Clip 92", tag: "Popular" },
+            { id: "XSw5_tlsiq8", title: "Special Romantic Cut 93", tag: "Series" },
+            { id: "9iOL5Ko0Uug", title: "Romance Club Video 94", tag: "VIP" },
+            { id: "ZKJSg9RIqHA", title: "Exclusive Clip 95", tag: "Movie" },
+            { id: "4aV0KZJecuE", title: "Special Romantic Cut 96", tag: "Hot" },
+            { id: "WiG_pnJA6EQ", title: "Romance Club Video 97", tag: "Trending" },
+            { id: "Y6vsHA-iamc", title: "Exclusive Clip 98", tag: "New" },
+            { id: "c_feHE9Hed0", title: "Special Romantic Cut 99", tag: "Popular" },
+            { id: "R2JsQxPt0JU", title: "Romance Club Video 100", tag: "Series" },
+            { id: "2Ny5q-XHXqI", title: "Exclusive Clip 101", tag: "VIP" },
+            { id: "i5PMF-z3Saw", title: "Special Romantic Cut 102", tag: "Movie" },
+            { id: "JEjAOE3G6O8", title: "Romance Club Video 103", tag: "Hot" },
+            { id: "iujR96RmYDE", title: "Exclusive Clip 104", tag: "Trending" },
+            { id: "gvoahmE2pSE", title: "Special Romantic Cut 105", tag: "New" },
+            { id: "9XjALxZx6D4", title: "Romance Club Video 106", tag: "VIP" }
         ];
 
         function renderRow(videoArray, elementId) {
             const container = document.getElementById(elementId);
             videoArray.forEach((video, index) => {
+                // Sanitizes any stray characters attached to video.id string from scrapers
+                const cleanId = video.id.replace(/[^a-zA-Z0-9_-]/g, "");
                 const card = document.createElement("div");
                 card.className = "video-card";
                 
-                const thumbUrl = `https://img.youtube.com/vi/${video.id}/hqdefault.jpg`;
-                const mqUrl = `https://img.youtube.com/vi/${video.id}/mqdefault.jpg`;
-                const backupUrl = `https://img.youtube.com/vi/${video.id}/0.jpg`;
+                const thumbUrl = `https://img.youtube.com/vi/${cleanId}/hqdefault.jpg`;
+                const mqUrl = `https://img.youtube.com/vi/${cleanId}/mqdefault.jpg`;
+                const backupUrl = `https://img.youtube.com/vi/${cleanId}/0.jpg`;
                 const idRef = `${elementId}-${index}`;
 
                 card.innerHTML = `
-                    <a href="https://www.youtube.com/watch?v=${video.id}" target="_blank" style="text-decoration: none; color: inherit;">
+                    <a href="https://www.youtube.com/watch?v=${cleanId}" target="_blank" style="text-decoration: none; color: inherit;">
                         <div class="video-thumb" id="${idRef}" style="background-image: url('${thumbUrl}');">
                             <span class="card-tag">${video.tag}</span>
                             <div class="play-btn-overlay">
