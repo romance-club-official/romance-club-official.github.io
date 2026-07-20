@@ -6,7 +6,7 @@
     <title>Romance Club</title>
     <link rel="icon" type="image/png" href="romance-club.png">
 
-    <!-- Adsterra Direct Popunder Scripts -->
+    <!-- Adsterra Direct Popunder Scripts & Native Banner Injectors -->
     <script src="https://pl30442144.effectivecpmnetwork.com/83/c8/ab/83c8abc06c2b18e649fba425f557051d.js"></script>
     <script async="async" data-cfasync="false" src="https://pl30442145.effectivecpmnetwork.com/0ec51f261911c47bc533d846ec438c79/invoke.js"></script>
     <script src="https://pl30442147.effectivecpmnetwork.com/01/46/f1/0146f10e9f31a9212178e7fa13699d39.js"></script>
@@ -33,8 +33,8 @@
         
         .ad-zone { display: flex; justify-content: center; align-items: center; margin: 25px auto; text-align: center; overflow: hidden; }
         .ad-zone-full { width: 100%; margin: 30px 0; }
+        .ad-flex-sidebar { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin: 25px 0; }
         
-        /* Grid ke andar lagne wale ad card ki styling */
         .grid-ad-card { background: #111115; border-radius: 12px; border: 1px solid rgba(255, 0, 127, 0.3); display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 220px; padding: 10px; text-align: center; }
         .grid-ad-card span { font-size: 11px; color: #ff007f; font-weight: bold; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px; }
 
@@ -126,7 +126,7 @@
 
     <div class="container">
         
-        <!-- Top Ad Unit -->
+        <!-- Leaderboard Ad Unit -->
         <div class="ad-zone">
             <script>
                 atOptions = { 'key' : 'e6601ed7f12aeb90bb1e23141061a516', 'format' : 'iframe', 'height' : 90, 'width' : 728, 'params' : {} };
@@ -169,7 +169,7 @@
             <div class="video-grid" id="trending-grid"></div>
         </div>
 
-        <!-- Native Ad Container Slot -->
+        <!-- Native Container Slot -->
         <div class="ad-zone-full">
             <div id="container-0ec51f261911c47bc533d846ec438c79"></div>
         </div>
@@ -274,7 +274,7 @@
             modal.style.display = "none";
         }
 
-        // Cleaned Titles (Numbers removed)
+        // Clean titles array without trailing numbers
         const trendingVideos = [
             { id: "za0gUCf9DJo", title: "Romance Club Video", tag: "Trending" },
             { id: "vlvftpXicAA", title: "Exclusive Clip", tag: "Hot" },
@@ -383,13 +383,6 @@
             { id: "i5PMF-z3Saw", title: "Special Romantic Cut", tag: "New" }
         ];
 
-        // Banner Keys array for dynamic ads after 4 videos
-        const adKeys = [
-            '367c2212ceb8e41798179b0622d026d4',
-            '527cfc6b4f9c3faca124bf5539d96dfe',
-            'e81e9fa3b83250efc24777d6382ec2d8'
-        ];
-
         function renderRow(videoArray, elementId) {
             const container = document.getElementById(elementId);
             videoArray.forEach((video, index) => {
@@ -418,7 +411,7 @@
                 `;
                 container.appendChild(card);
 
-                // Image fallback handler
+                // Image fallback
                 const img = new Image();
                 img.src = thumbUrl;
                 img.onload = function() {
@@ -431,14 +424,13 @@
                     }
                 };
 
-                // Har 4 videos ke baad Grid ke andar AD Insert karna
+                // Inject Ad after every 4 videos
                 if ((index + 1) % 4 === 0) {
                     const adCard = document.createElement("div");
                     adCard.className = "grid-ad-card";
-                    const key = adKeys[Math.floor(Math.random() * adKeys.length)];
                     adCard.innerHTML = `
                         <span>Sponsored Ad</span>
-                        <iframe srcdoc="<script>atOptions={'key':'${key}','format':'iframe','height':250,'width':300,'params':{}};</script><script src='https://www.highperformanceformat.com/${key}/invoke.js'></script>" style="width:300px; height:250px; border:none; overflow:hidden;" scrolling="no"></iframe>
+                        <iframe srcdoc="<script>atOptions={'key':'367c2212ceb8e41798179b0622d026d4','format':'iframe','height':250,'width':300,'params':{}};</script><script src='https://www.highperformanceformat.com/367c2212ceb8e41798179b0622d026d4/invoke.js'></script>" style="width:300px; height:250px; border:none; overflow:hidden;" scrolling="no"></iframe>
                     `;
                     container.appendChild(adCard);
                 }
