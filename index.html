@@ -7,7 +7,7 @@
     <link rel="icon" type="image/png" href="romance-club.png">
     <meta name="google-site-verification" content="dPqKre-HrKW9dhi_mTl2jZ8kT3K9D9JlKl6lGiI0Od0" />
 
-    <!-- Adsterra Native Banner Injector (Blocking Popunders Removed to prevent Freeze) -->
+    <!-- Adsterra Native Banner Injector -->
     <script async="async" data-cfasync="false" src="https://pl30442145.effectivecpmnetwork.com/0ec51f261911c47bc533d846ec438c79/invoke.js"></script>
 
     <style>
@@ -69,12 +69,34 @@
         .video-title { font-size: 14px; font-weight: 600; margin-bottom: 5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         .video-meta { font-size: 12px; color: #666; font-weight: 500; }
 
+        /* Video Modal Player Overlay */
         .video-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.95); z-index: 1000; align-items: center; justify-content: center; backdrop-filter: blur(8px); }
-        .modal-content { position: relative; width: 90%; max-width: 850px; background: #0c0c10; border-radius: 16px; border: 1px solid rgba(255, 0, 127, 0.3); overflow: hidden; box-shadow: 0 0 30px rgba(255, 0, 127, 0.3); }
-        .modal-video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; }
+        .modal-content { position: relative; width: 90%; max-width: 850px; background: #0c0c10; border-radius: 16px; border: 1px solid rgba(255, 0, 127, 0.3); overflow: visible; box-shadow: 0 0 30px rgba(255, 0, 127, 0.3); }
+        .modal-video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; border-radius: 16px; overflow: hidden; }
         .modal-video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
-        .modal-close { position: absolute; top: 15px; right: 20px; color: white; font-size: 30px; font-weight: bold; cursor: pointer; z-index: 1010; transition: 0.3s; }
-        .modal-close:hover { color: #ff007f; }
+        
+        /* High-Visibility Close Button */
+        .modal-close { 
+            position: absolute; 
+            top: 12px; 
+            right: 12px; 
+            background: #ff007f; 
+            color: #ffffff; 
+            width: 42px; 
+            height: 42px; 
+            border-radius: 50%; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            font-size: 22px; 
+            font-weight: bold; 
+            cursor: pointer; 
+            z-index: 1010; 
+            box-shadow: 0 0 15px rgba(255, 0, 127, 0.8); 
+            transition: transform 0.2s ease, background 0.2s ease; 
+            user-select: none;
+        }
+        .modal-close:hover, .modal-close:active { background: #ffffff; color: #ff007f; transform: scale(1.1); }
 
         .form-section { background: #111115; border: 1px solid rgba(255, 0, 127, 0.2); border-radius: 16px; padding: 30px; max-width: 500px; margin: 40px auto; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
         .form-section h3 { font-size: 22px; color: #ff007f; margin-bottom: 20px; text-align: center; text-transform: uppercase; letter-spacing: 0.5px; }
@@ -99,6 +121,16 @@
             .hero-slide h1 { font-size: 42px; }
             .hero-slide p { font-size: 16px; }
             .features-row { grid-template-columns: 1fr; }
+
+            /* Clear, Prominent Placement Above Video Frame for Mobile */
+            .modal-content { margin-top: 45px; }
+            .modal-close { 
+                top: -50px; 
+                right: 0; 
+                width: 46px; 
+                height: 46px; 
+                font-size: 26px; 
+            }
         }
     </style>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
@@ -171,7 +203,6 @@
                 <a href="#" class="view-all">View All ❯</a>
             </div>
             
-            <!-- Trending Block 1 (Videos 1-6) -->
             <div class="video-grid" id="tg-1"></div>
 
             <!-- Ad 3: In-Grid Break 1 (300x250) -->
@@ -183,7 +214,6 @@
                 <script src="https://www.highperformanceformat.com/367c2212ceb8e41798179b0622d026d4/invoke.js"></script>
             </div>
 
-            <!-- Trending Block 2 (Videos 7-12) -->
             <div class="video-grid" id="tg-2"></div>
 
             <!-- Ad 4: In-Grid Break 2 (320x50 Mobile Leaderboard) -->
@@ -195,7 +225,6 @@
                 <script src="https://www.highperformanceformat.com/e81e9fa3b83250efc24777d6382ec2d8/invoke.js"></script>
             </div>
 
-            <!-- Trending Block 3 (Videos 13-24) -->
             <div class="video-grid" id="tg-3"></div>
 
             <!-- Ad 5: Native Ad Slot -->
@@ -203,7 +232,6 @@
                 <div id="container-0ec51f261911c47bc533d846ec438c79"></div>
             </div>
 
-            <!-- Trending Block 4 (Videos 25-51) -->
             <div class="video-grid" id="tg-4"></div>
         </div>
 
@@ -222,7 +250,6 @@
                 <a href="#" class="view-all">View All ❯</a>
             </div>
             
-            <!-- Continue Block 1 (Videos 52-57) -->
             <div class="video-grid" id="cg-1"></div>
 
             <!-- Ad 7: In-Grid Break 3 (300x250) -->
@@ -234,7 +261,6 @@
                 <script src="https://www.highperformanceformat.com/367c2212ceb8e41798179b0622d026d4/invoke.js"></script>
             </div>
 
-            <!-- Continue Block 2 (Videos 58-63) -->
             <div class="video-grid" id="cg-2"></div>
 
             <!-- Ad 8: In-Grid Break 4 (468x60) -->
@@ -246,7 +272,6 @@
                 <script src="https://www.highperformanceformat.com/527cfc6b4f9c3faca124bf5539d96dfe/invoke.js"></script>
             </div>
 
-            <!-- Continue Block 3 (Videos 64-102) -->
             <div class="video-grid" id="cg-3"></div>
         </div>
 
@@ -271,10 +296,10 @@
         </div>
     </div>
 
-    <!-- Video Modal Player overlay -->
+    <!-- Video Modal Player Overlay -->
     <div id="videoModal" class="video-modal">
-        <span class="modal-close" onclick="closePlayer()">&times;</span>
         <div class="modal-content">
+            <span class="modal-close" onclick="closePlayer()" title="Close Video">✕</span>
             <div class="modal-video-wrapper">
                 <iframe id="modalIframe" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>
@@ -319,7 +344,7 @@
             });
         });
 
-        // Optimized Play: Smartlink only triggers ONCE per session to prevent browser crash
+        // Smartlink triggers once on first play to prevent crashing
         function playVideoDirect(videoId) {
             if (!hasAdTriggered) {
                 hasAdTriggered = true;
@@ -481,7 +506,7 @@
                 `;
                 container.appendChild(card);
 
-                // Check thumbnail fallback safely
+                // Thumbnail fallback handling
                 const img = new Image();
                 img.src = thumbUrl;
                 img.onload = function() {
@@ -497,13 +522,13 @@
             });
         }
 
-        // Render all 51 Trending Videos cleanly across containers
+        // Render all 51 Trending Videos
         renderArrayToElement(trendingVideos.slice(0, 6), "tg-1");
         renderArrayToElement(trendingVideos.slice(6, 12), "tg-2");
         renderArrayToElement(trendingVideos.slice(12, 24), "tg-3");
         renderArrayToElement(trendingVideos.slice(24, 51), "tg-4");
 
-        // Render all 51 Continue Watching Videos cleanly across containers
+        // Render all 51 Continue Watching Videos
         renderArrayToElement(continueVideos.slice(0, 6), "cg-1");
         renderArrayToElement(continueVideos.slice(6, 12), "cg-2");
         renderArrayToElement(continueVideos.slice(12, 51), "cg-3");
