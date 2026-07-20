@@ -7,10 +7,8 @@
     <link rel="icon" type="image/png" href="romance-club.png">
     <meta name="google-site-verification" content="dPqKre-HrKW9dhi_mTl2jZ8kT3K9D9JlKl6lGiI0Od0" />
 
-    <!-- Adsterra Direct Popunder Scripts & Native Banner Injectors -->
-    <script src="https://pl30442144.effectivecpmnetwork.com/83/c8/ab/83c8abc06c2b18e649fba425f557051d.js"></script>
+    <!-- Adsterra Native Banner Injector (Blocking Popunders Removed to prevent Freeze) -->
     <script async="async" data-cfasync="false" src="https://pl30442145.effectivecpmnetwork.com/0ec51f261911c47bc533d846ec438c79/invoke.js"></script>
-    <script src="https://pl30442147.effectivecpmnetwork.com/01/46/f1/0146f10e9f31a9212178e7fa13699d39.js"></script>
 
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
@@ -321,6 +319,7 @@
             });
         });
 
+        // Optimized Play: Smartlink only triggers ONCE per session to prevent browser crash
         function playVideoDirect(videoId) {
             if (!hasAdTriggered) {
                 hasAdTriggered = true;
@@ -343,6 +342,7 @@
             modal.style.display = "none";
         }
 
+        // All 51 Trending Videos Included
         const trendingVideos = [
             { id: "za0gUCf9DJo", title: "Romance Club Video", tag: "Trending" },
             { id: "vlvftpXicAA", title: "Exclusive Clip", tag: "Hot" },
@@ -397,6 +397,7 @@
             { id: "kfxU7Y8E04k", title: "Special Romantic Cut", tag: "New" }
         ];
 
+        // All 51 Continue Watching Videos Included
         const continueVideos = [
             { id: "bHAflX5yGJk", title: "Romance Club Video", tag: "Trending" },
             { id: "21EZZbvsd34", title: "Exclusive Clip", tag: "New" },
@@ -480,6 +481,7 @@
                 `;
                 container.appendChild(card);
 
+                // Check thumbnail fallback safely
                 const img = new Image();
                 img.src = thumbUrl;
                 img.onload = function() {
@@ -495,15 +497,16 @@
             });
         }
 
-        // Render Videos in smaller 6-video chunks between ad placements
+        // Render all 51 Trending Videos cleanly across containers
         renderArrayToElement(trendingVideos.slice(0, 6), "tg-1");
         renderArrayToElement(trendingVideos.slice(6, 12), "tg-2");
         renderArrayToElement(trendingVideos.slice(12, 24), "tg-3");
-        renderArrayToElement(trendingVideos.slice(24), "tg-4");
+        renderArrayToElement(trendingVideos.slice(24, 51), "tg-4");
 
+        // Render all 51 Continue Watching Videos cleanly across containers
         renderArrayToElement(continueVideos.slice(0, 6), "cg-1");
         renderArrayToElement(continueVideos.slice(6, 12), "cg-2");
-        renderArrayToElement(continueVideos.slice(12), "cg-3");
+        renderArrayToElement(continueVideos.slice(12, 51), "cg-3");
     </script>
 </body>
 </html>
