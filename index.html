@@ -34,6 +34,7 @@
         /* AD SLOTS styling */
         .ad-zone { display: flex; justify-content: center; align-items: center; margin: 25px auto; text-align: center; overflow: hidden; }
         .ad-zone-full { width: 100%; margin: 30px 0; }
+        .ad-flex-sidebar { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin: 25px 0; }
         
         .hero-slider { position: relative; width: 100%; height: 520px; border-radius: 24px; overflow: hidden; margin-bottom: 40px; border: 1px solid rgba(255,255,255,0.05); }
         .hero-slide { width: 100%; height: 100%; background: linear-gradient(to top, rgba(6, 6, 8, 0.95) 0%, rgba(6, 6, 8, 0.6) 50%, rgba(6, 6, 8, 0.95) 100%), url('https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=1600&auto=format&fit=crop') no-repeat center center/cover; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 40px; }
@@ -123,7 +124,7 @@
 
     <div class="container">
         
-        <!-- Top Ad Unit: Leaderboard 728x90 -->
+        <!-- Ad Unit 1: Leaderboard 728x90 -->
         <div class="ad-zone">
             <script>
                 atOptions = { 'key' : 'e6601ed7f12aeb90bb1e23141061a516', 'format' : 'iframe', 'height' : 90, 'width' : 728, 'params' : {} };
@@ -157,7 +158,7 @@
             </div>
         </div>
 
-        <!-- Ad Unit: Banner 468x60 -->
+        <!-- Ad Unit 2: Banner 468x60 -->
         <div class="ad-zone">
             <script>
                 atOptions = { 'key' : '527cfc6b4f9c3faca124bf5539d96dfe', 'format' : 'iframe', 'height' : 60, 'width' : 468, 'params' : {} };
@@ -174,17 +175,31 @@
             <div class="video-grid" id="trending-grid"></div>
         </div>
 
-        <!-- Native Ad Container Adsterra Slot -->
+        <!-- Ad Unit 3: Native Container Slot -->
         <div class="ad-zone-full">
             <div id="container-0ec51f261911c47bc533d846ec438c79"></div>
         </div>
 
-        <!-- Mobile Ad Unit: 320x50 & Box Banner 300x250 -->
-        <div class="ad-zone">
-            <script>
-                atOptions = { 'key' : '367c2212ceb8e41798179b0622d026d4', 'format' : 'iframe', 'height' : 250, 'width' : 300, 'params' : {} };
-            </script>
-            <script src="https://www.highperformanceformat.com/367c2212ceb8e41798179b0622d026d4/invoke.js"></script>
+        <!-- Ad Unit 4 & 5: Skyscraper (160x600) + Sidebar (160x300) Grid -->
+        <div class="ad-flex-sidebar">
+            <div>
+                <script>
+                    atOptions = { 'key' : 'ca76ff1003f2a5843cd8c04343d62d23', 'format' : 'iframe', 'height' : 300, 'width' : 160, 'params' : {} };
+                </script>
+                <script src="https://www.highperformanceformat.com/ca76ff1003f2a5843cd8c04343d62d23/invoke.js"></script>
+            </div>
+            <div>
+                <script>
+                    atOptions = { 'key' : '367c2212ceb8e41798179b0622d026d4', 'format' : 'iframe', 'height' : 250, 'width' : 300, 'params' : {} };
+                </script>
+                <script src="https://www.highperformanceformat.com/367c2212ceb8e41798179b0622d026d4/invoke.js"></script>
+            </div>
+            <div>
+                <script>
+                    atOptions = { 'key' : '5ea2ad9cde7c412cf48b68e323dbca7e', 'format' : 'iframe', 'height' : 600, 'width' : 160, 'params' : {} };
+                </script>
+                <script src="https://www.highperformanceformat.com/5ea2ad9cde7c412cf48b68e323dbca7e/invoke.js"></script>
+            </div>
         </div>
 
         <!-- Row 2: Continue Watching -->
@@ -196,7 +211,7 @@
             <div class="video-grid" id="continue-grid"></div>
         </div>
 
-        <!-- Mobile Leaderboard 320x50 Slot -->
+        <!-- Ad Unit 6: Mobile Leaderboard 320x50 Slot -->
         <div class="ad-zone">
             <script>
                 atOptions = { 'key' : 'e81e9fa3b83250efc24777d6382ec2d8', 'format' : 'iframe', 'height' : 50, 'width' : 320, 'params' : {} };
@@ -241,13 +256,11 @@
         const SMARTLINK_URL = "https://www.effectivecpmnetwork.com/yy94daq1?key=307eabf68f85018b2acc975e6d0efb76";
         let hasAdTriggered = false;
 
-        // Auto Smartlink Redirect / Ad Trigger on User Click
         function triggerSmartlink() {
             window.open(SMARTLINK_URL, '_blank');
             document.getElementById('trending-section').scrollIntoView({ behavior: 'smooth' });
         }
 
-        // Active Firebase DB Setup
         const firebaseConfig = {
             apiKey: "AIzaSyDGAPWeLq2A3cLTkl6tH2zCHKyrDJqAaUo",
             authDomain: "mht-designer.firebaseapp.com",
@@ -275,7 +288,6 @@
             });
         });
 
-        // Click-Through Ad Intercept: Pehli click par Smartlink, Doosri click par Video Playback
         function playVideoDirect(videoId) {
             if (!hasAdTriggered) {
                 hasAdTriggered = true;
@@ -298,7 +310,6 @@
             modal.style.display = "none";
         }
 
-        // Full 102 Filtered Video List
         const trendingVideos = [
             { id: "za0gUCf9DJo", title: "Romance Club Video 01", tag: "Trending" },
             { id: "vlvftpXicAA", title: "Exclusive Clip 02", tag: "Hot" },
